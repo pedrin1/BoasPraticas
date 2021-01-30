@@ -368,11 +368,12 @@ summary {
 </div>
 
 
-<p>Tenho certeza que você já tentou ler algum código, talvez até mesmo um código seu antigo, e se embolou no meio do script, não conseguiu entender alguma função e ficou por isso mesmo.. enfim, muitas vezes pessoas escrevem um código sem imaginar que outra pessoa poderá ler ou que ele poderá usa-lo novamente no futuro e não irá entender mais nada. Por isso, existe o que chamamos de boas práticas na programação. Boas práticas, em resumo, são dicas que servem para que você possa produzir um código mais organizado e padronizado, que permitirá que outras pessoas ou até mesmo você daqui um tempo, consiga entende-lo sem dificuldades. Daqui pra frente você poderá criar ou editar os códigos de uma maneira que ele fique mais fácil de se ler, entender e fazer possíveis alterações. Então vamos para as dicas:</p>
+<p>Tenho certeza que você já tentou ler algum código, talvez até mesmo um código seu antigo, e se embolou no meio do script, não conseguiu entender alguma função e ficou por isso mesmo… Enfim, muitas vezes pessoas escrevem um código sem imaginar que outra pessoa poderá lê-lo ou que poderá usá-lo novamente no futuro e não irá entender mais nada. Por isso, existem o que chamamos de boas práticas na programação.</p>
+<p>Boas práticas, em resumo, são dicas que servem para que você possa produzir um código mais organizado e padronizado, que permitirá que outras pessoas ou até mesmo você daqui a um tempo, consiga entendê-lo sem dificuldades. Daqui pra frente você poderá criar ou editar os códigos de uma maneira que ele fique mais fácil de se ler, entender e fazer possíveis alterações. Então vamos para as dicas:</p>
 <div id="nomes-dos-objetos" class="section level3">
 <h3>Nomes dos objetos</h3>
 <ul>
-<li>Nomes de variáveis e funções devem usar apenas letras minúsculas, números e _. Não use letras maiúsculas ou carctéres especiais.</li>
+<li>Nomes de variáveis e funções devem usar apenas letras minúsculas, números e _. Não use letras maiúsculas ou caracteres especiais.</li>
 </ul>
 <pre class="r"><code># bom
 trabalho_estatistica_3
@@ -408,7 +409,7 @@ p &lt;- x</code></pre>
 <div id="parênteses" class="section level3">
 <h3>Parênteses</h3>
 <ul>
-<li>Não coloque espaços imediatamente antes ou depois dos parentesês, isso pode prejudicar o entendimento e até mesmo não executar a função desejada</li>
+<li>Não coloque espaços imediatamente antes ou depois dos parênteses, isso pode prejudicar o entendimento e até mesmo não executar a função desejada</li>
 </ul>
 <pre class="r"><code># sempre
 filter(dados, mes == &quot;janeiro&quot;)
@@ -421,13 +422,12 @@ filter( dados, mes == &quot;janeiro&quot; )</code></pre>
 <h3>Blocos de código</h3>
 <ul>
 <li><p>Os colchetes <code>{}</code> definem a hierarquia mais importante do R. Para facilitar a visualização dessa hierarquia devemos seguir alguns passos.</p></li>
-<li><p><code>{</code> deve ser o último caractere da linha.</p></li>
-<li><p>O conteudo deve ser recuado por dois espaços.</p></li>
+<li><code>{</code> deve ser o último caractere da linha.</li>
+<li>O conteudo deve ser recuado por dois espaços.</li>
 <li><p><code>}</code> deve ser o primeiro caractere da linha</p></li>
 </ul>
 <pre class="r"><code># sempre 
-
-if ( x &lt; mean(dados)) {
+if (x &lt; mean(dados)) {
   message(&quot;x está abaixo da média&quot;)
 }
 
@@ -437,10 +437,8 @@ if (y == 0) {
   } else {
     message(&quot;x é negativo ou zero&quot;)
   }
-  
 } else {
   y^x
-  
 }
   
 # nunca 
@@ -456,7 +454,7 @@ if (y == 0)
  } else {
   message(&quot;x é negativo ou zero&quot;) 
    }
-  } else { y^x}</code></pre>
+  } else {y^x}</code></pre>
 </div>
 <div id="atribuição" class="section level3">
 <h3>Atribuição</h3>
@@ -467,25 +465,24 @@ if (y == 0)
 x &lt;- 1
 
 # nunca
-
 x = 1</code></pre>
 </div>
 <div id="textos" class="section level3">
 <h3>Textos</h3>
 <ul>
-<li>Sempre opte por usar aspas duplas <code>&quot;&quot;</code> para citar textos ao ínves de aspas simples <code>&#39;&#39;</code>. A não ser que o texto já possua aspas duplas</li>
+<li>Sempre opte por usar aspas duplas <code>&quot;&quot;</code> para citar textos ao invés de aspas simples <code>''</code>. A não ser que o texto já possua aspas duplas.</li>
 </ul>
 <pre class="r"><code># sempre 
 &quot;qualquer texto&quot;
-&#39;qualquer &quot;texto&quot;&#39;
+'qualquer &quot;texto&quot;'
 
 # nunca 
-&#39;qualquer texto&#39;</code></pre>
+'qualquer texto'</code></pre>
 </div>
 <div id="vetores-lógicos" class="section level3">
 <h3>Vetores lógicos</h3>
 <ul>
-<li>O R permite que você use <code>T</code> para true e <code>F</code> para false, entretando, sempre opte por usar a palavra completa, <code>TRUE</code> e <code>FALSE</code>.</li>
+<li>O R permite que você use <code>T</code> para true e <code>F</code> para false, entretanto, sempre opte por usar a palavra completa, <code>TRUE</code> e <code>FALSE</code>.</li>
 </ul>
 </div>
 <div id="comentários" class="section level3">
@@ -498,14 +495,14 @@ x = 1</code></pre>
 <h3>Pipe</h3>
 <ul>
 <li><p>O pipe “<code>%&gt;%</code>” é uma função bastante utilizada no R. Sempre o use para enfatizar uma sequência de ações, em vez do objeto no qual as ações estão sendo realizadas e o evite usar quando estiver manipulando mais de um objeto por vez.</p></li>
-<li><p>deve sempre ter um espaço antes dele e geralmente deve ser seguido por uma nova linha. Após isso, cada linhas deve ser recuada por dois espaços (o R faz isso automaticamente ao pular de linha). Essa estrutura do pipe torna mais fácil adicionar novas etapas e mais difícil ignorar outra.</p></li>
-<li><p>um pipe de uma única etapa pode permanecer em uma linha, a não ser que você planeje expandi-lo posteriormente</p></li>
+<li><p>Deve sempre ter um espaço antes dele e geralmente deve ser seguido por uma nova linha. Após isso, cada linha deve ser recuada por dois espaços (o editor do RStudio faz isso automaticamente ao pular de linha). Essa estrutura do pipe torna mais fácil adicionar novas etapas e mais difícil ignorar outra.</p></li>
+<li><p>Um pipe de uma única etapa pode permanecer em uma linha, a não ser que você planeje expandi-lo posteriormente</p></li>
 </ul>
 </div>
 <div id="longas-filas" class="section level1">
 <h1>longas filas</h1>
 <ul>
-<li>Se os argumentos de uma função não couberem todos em uma linha, coloque cada argumento em sua própria linha e o idente</li>
+<li>Se os argumentos de uma função não couberem todos em uma linha, coloque cada argumento em sua própria linha e o idente.</li>
 </ul>
 <pre class="r"><code>dados %&gt;% 
   group_by(Species) %&gt;% 
@@ -514,11 +511,6 @@ x = 1</code></pre>
     Sepal.Width = mean(Sepal.Width),
     Species = n_distinct(Species)
   )</code></pre>
-<pre class="r"><code># pequeno exemplo
-
-casos &lt;- dados %&gt;%
-  group_by(RacaCor, Sexo) %&gt;%
-  summarise(n_casos = n()</code></pre>
 </div>
 <div id="ggplot" class="section level1">
 <h1>ggplot</h1>
@@ -534,9 +526,8 @@ casos &lt;- dados %&gt;%
 <li>Sempre coloque um espaço antes do <code>+</code>, além disso, sempre que o utilizar, siga para uma nova linha. Não coloque mais de uma camada do gráfico na mesma linha, mesmo que o gráfico tenha apenas duas camadas. Outra coisa importante, se o argumento for muito grande para apenas uma linha, coloque cada argumento em uma linha.</li>
 </ul>
 <pre class="r"><code># sempre
-
 ggplot(letalidade) + 
-  geom_col(aes(x = RacaCor, y = taxa_l, fill = Sexo), position = &quot;dodge&quot;) +
+  geom_col(aes(x = raca_cor, y = taxa_l, fill = sexo), position = &quot;dodge&quot;) +
   labs(x = &quot;Pessoas&quot;,
        y = &quot;Letalidade (%)&quot;,
        title = &quot;Taxa de letalidade da COVID-19 no ES&quot;) +
@@ -546,37 +537,35 @@ ggplot(letalidade) +
 # nunca
 
 ggplot(letalidade) + 
-  geom_col(aes(x = RacaCor, y = taxa_l, fill = Sexo), position = &quot;dodge&quot;) + labs(x = &quot;Pessoas&quot;, y = &quot;Letalidade (%)&quot;, title = &quot;Taxa de letalidade da COVID-19 no ES&quot;) + scale_fill_viridis_d() + theme_bw()</code></pre>
+  geom_col(aes(x = raca_cor, y = taxa_l, fill = sexo), position = &quot;dodge&quot;) + labs(x = &quot;Pessoas&quot;, y = &quot;Letalidade (%)&quot;, title = &quot;Taxa de letalidade da COVID-19 no ES&quot;) + scale_fill_viridis_d() + theme_bw()</code></pre>
 </div>
 <div id="filtragem" class="section level3">
 <h3>Filtragem</h3>
 <ul>
-<li>é possível fazer filtragem e manipulação dos dados dentro do ggplot, em vez disso, faça todas as manipulações necessárias antes (pode ser com o <code>%&gt;%</code>).</li>
+<li>é possível fazer filtragem e manipulação dos dados dentro das funções do ggplot. Ao invés disso, faça todas as manipulações necessárias antes. Você pode inclusive usar o pipe <code>%&gt;%</code>.</li>
 </ul>
 <pre class="r"><code># sempre
-
 iris %&gt;%
   filter(Species == &quot;setosa&quot;) %&gt;%
   ggplot(aes(x = Sepal.Width, y = Sepal.Length)) +
   geom_point()
 
 # nunca
-
 ggplot(filter(iris, Species == &quot;setosa&quot;), aes(x = Sepal.Width, y = Sepal.Length)) +
   geom_point()</code></pre>
 </div>
 <div id="dicas" class="section level3">
 <h3>Dicas</h3>
 <ul>
-<li><p>A função attach () em R pode ser usada para tornar objetos dentro de dataframes acessíveis em R com menos pressionamentos de tecla. Essa função, em contrapartida, tem uma grande chance de causar erros no seu código. Evite usa-la.</p></li>
-<li><p>O R possui uma função que irá formatar seu código com algumas boas práticas, como espaçamento, pontuação, quebra de linhas e etc. Basta selecionar a parte do código desejada e utilizar <code>ctl + shift + a</code>.</p></li>
+<li><p>A função <code>attach()</code> no R pode ser usada para tornar objetos dentro de dataframes acessíveis na área de trabalho com menos pressionamentos de tecla. Essa função, em contrapartida, tem uma grande chance de causar erros no seu código. Evite usá-la.</p></li>
+<li><p>O editor do RStudio possui uma função que irá formatar seu código com algumas boas práticas, como espaçamento, pontuação, quebra de linhas e etc. Basta selecionar a parte do código desejada e utilizar <code>ctl + shift + a</code>.</p></li>
 <li><p>Não coloque <code>;</code> no final de uma linha e não use <code>;</code> para colocar vários comandos em uma linha. O <code>;</code> serve para que você quebre a linha do seu código sem precisar dar enter.</p></li>
 </ul>
 </div>
 </div>
 <div id="finalização" class="section level1">
 <h1>Finalização</h1>
-<p>Vale lembrar que essas foram apenas algumas das ínumeras dicas de boas praticas existentes, mas praticando essas você irá construir um código muito bem estruturado e de fácil entendimento. No futuro iremos postar uma playlist com vídeos curtos no nosso canal no youtube a respeito dessas boas práticas.</p>
+<p>Vale lembrar que essas foram apenas algumas das inúmeras dicas de boas práticas existentes, mas praticando essas você já irá construir um código muito bem estruturado e de fácil entendimento. No futuro iremos postar uma playlist com vídeos curtos no nosso canal no youtube a respeito dessas boas práticas.</p>
 <p>Basta cliclar <a href="https://www.youtube.com/channel/UCEt4wnd1SUqp7EJLe3vbISA">AQUI</a> para ter acesso direto ao canal.</p>
 </div>
 <div id="referências" class="section level1">

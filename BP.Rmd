@@ -6,16 +6,16 @@ output: html_document
 
 
 
-Tenho certeza que você já tentou ler algum código, talvez até mesmo um código seu antigo, e se embolou no meio do script, não conseguiu entender alguma função e ficou por isso mesmo.. enfim, muitas vezes pessoas escrevem um código sem imaginar que outra pessoa poderá ler ou que ele poderá usa-lo novamente no futuro e não irá entender mais nada. Por isso, existe o que chamamos de boas práticas na programação. 
-Boas práticas, em resumo, são dicas que servem para que você possa produzir um código mais organizado e padronizado, que permitirá que outras pessoas ou até mesmo você daqui um tempo, consiga entende-lo sem dificuldades. Daqui pra frente você poderá criar ou editar os códigos de uma maneira que ele fique mais fácil de se ler, entender e fazer possíveis alterações. Então vamos para as dicas:
+Tenho certeza que você já tentou ler algum código, talvez até mesmo um código seu antigo, e se embolou no meio do script, não conseguiu entender alguma função e ficou por isso mesmo... Enfim, muitas vezes pessoas escrevem um código sem imaginar que outra pessoa poderá lê-lo ou que poderá usá-lo novamente no futuro e não irá entender mais nada. Por isso, existem o que chamamos de boas práticas na programação. 
+
+Boas práticas, em resumo, são dicas que servem para que você possa produzir um código mais organizado e padronizado, que permitirá que outras pessoas ou até mesmo você daqui a um tempo, consiga entendê-lo sem dificuldades. Daqui pra frente você poderá criar ou editar os códigos de uma maneira que ele fique mais fácil de se ler, entender e fazer possíveis alterações. Então vamos para as dicas:
 
 
 ### Nomes dos objetos
 
-* Nomes de variáveis e funções devem usar apenas letras minúsculas, números e _. Não use letras maiúsculas ou carctéres especiais.
+* Nomes de variáveis e funções devem usar apenas letras minúsculas, números e _. Não use letras maiúsculas ou caracteres especiais.
 
 ```{r, eval=F}
-
 # bom
 trabalho_estatistica_3
 
@@ -58,7 +58,7 @@ p <- x
 
 ### Parênteses
 
-* Não coloque espaços imediatamente antes ou depois dos parentesês, isso pode prejudicar o entendimento e até mesmo não executar a função desejada
+* Não coloque espaços imediatamente antes ou depois dos parênteses, isso pode prejudicar o entendimento e até mesmo não executar a função desejada
 
 ```{r, eval=F}
 # sempre
@@ -83,8 +83,7 @@ filter( dados, mes == "janeiro" )
 
 ```{r, eval=F}
 # sempre 
-
-if ( x < mean(dados)) {
+if (x < mean(dados)) {
   message("x está abaixo da média")
 }
 
@@ -94,10 +93,8 @@ if (y == 0) {
   } else {
     message("x é negativo ou zero")
   }
-  
 } else {
   y^x
-  
 }
   
 # nunca 
@@ -113,8 +110,7 @@ if (y == 0)
  } else {
   message("x é negativo ou zero") 
    }
-  } else { y^x}
-
+  } else {y^x}
 
 ```
 
@@ -128,14 +124,12 @@ if (y == 0)
 x <- 1
 
 # nunca
-
 x = 1
-
 ```
 
 ### Textos 
 
-* Sempre opte por usar aspas duplas `""` para citar textos ao ínves de aspas simples `''`. A não ser que o texto já possua aspas duplas 
+* Sempre opte por usar aspas duplas `""` para citar textos ao invés de aspas simples `''`. A não ser que o texto já possua aspas duplas. 
 
 ```{r, eval=F}
 # sempre 
@@ -150,7 +144,7 @@ x = 1
 
 ### Vetores lógicos 
 
-* O R permite que você use `T` para true e `F` para false, entretando, sempre opte por usar a palavra completa, `TRUE` e `FALSE`.
+* O R permite que você use `T` para true e `F` para false, entretanto, sempre opte por usar a palavra completa, `TRUE` e `FALSE`.
 
 
 ### Comentários 
@@ -163,13 +157,13 @@ No código de análise de dados, use comentários para registrar descobertas imp
 
 * O pipe "` %>% `" é uma função bastante utilizada no R. Sempre o use para enfatizar uma sequência de ações, em vez do objeto no qual as ações estão sendo realizadas e o evite usar quando estiver manipulando mais de um objeto por vez.
 
-* deve sempre ter um espaço antes dele e geralmente deve ser seguido por uma nova linha. Após isso, cada linhas deve ser recuada por dois espaços (o R faz isso automaticamente ao pular de linha). Essa estrutura do pipe torna mais fácil adicionar novas etapas e mais difícil ignorar outra.
+* Deve sempre ter um espaço antes dele e geralmente deve ser seguido por uma nova linha. Após isso, cada linha deve ser recuada por dois espaços (o editor do RStudio faz isso automaticamente ao pular de linha). Essa estrutura do pipe torna mais fácil adicionar novas etapas e mais difícil ignorar outra.
 
-* um pipe de uma única etapa pode permanecer em uma linha, a não ser que você planeje expandi-lo posteriormente
+* Um pipe de uma única etapa pode permanecer em uma linha, a não ser que você planeje expandi-lo posteriormente
 
 # longas filas
 
-* Se os argumentos de uma função não couberem todos em uma linha, coloque cada argumento em sua própria linha e o idente
+* Se os argumentos de uma função não couberem todos em uma linha, coloque cada argumento em sua própria linha e o idente.
 
 ```{r, eval=F}
 dados %>% 
@@ -183,15 +177,6 @@ dados %>%
 
 ```
 
-
-```{r, eval=F}
-# pequeno exemplo
-
-casos <- dados %>%
-  group_by(RacaCor, Sexo) %>%
-  summarise(n_casos = n()
-
-```
 
 
 
@@ -207,9 +192,8 @@ casos <- dados %>%
 
 ```{r, eval=F}
 # sempre
-
 ggplot(letalidade) + 
-  geom_col(aes(x = RacaCor, y = taxa_l, fill = Sexo), position = "dodge") +
+  geom_col(aes(x = raca_cor, y = taxa_l, fill = sexo), position = "dodge") +
   labs(x = "Pessoas",
        y = "Letalidade (%)",
        title = "Taxa de letalidade da COVID-19 no ES") +
@@ -219,26 +203,22 @@ ggplot(letalidade) +
 # nunca
 
 ggplot(letalidade) + 
-  geom_col(aes(x = RacaCor, y = taxa_l, fill = Sexo), position = "dodge") + labs(x = "Pessoas", y = "Letalidade (%)", title = "Taxa de letalidade da COVID-19 no ES") + scale_fill_viridis_d() + theme_bw()
-
-
+  geom_col(aes(x = raca_cor, y = taxa_l, fill = sexo), position = "dodge") + labs(x = "Pessoas", y = "Letalidade (%)", title = "Taxa de letalidade da COVID-19 no ES") + scale_fill_viridis_d() + theme_bw()
 ```
 
 
 ### Filtragem
 
-* é possível fazer filtragem e manipulação dos dados dentro do ggplot, em vez disso, faça todas as manipulações necessárias antes (pode ser com o ` %>% `).
+* é possível fazer filtragem e manipulação dos dados dentro das funções do ggplot. Ao invés disso, faça todas as manipulações necessárias antes. Você pode inclusive usar o pipe `%>%`.
 
 ```{r, eval=F}
 # sempre
-
 iris %>%
   filter(Species == "setosa") %>%
   ggplot(aes(x = Sepal.Width, y = Sepal.Length)) +
   geom_point()
 
 # nunca
-
 ggplot(filter(iris, Species == "setosa"), aes(x = Sepal.Width, y = Sepal.Length)) +
   geom_point()
 
@@ -246,19 +226,17 @@ ggplot(filter(iris, Species == "setosa"), aes(x = Sepal.Width, y = Sepal.Length)
 
 ### Dicas
 
-* A função attach () em R pode ser usada para tornar objetos dentro de dataframes acessíveis em R com menos pressionamentos de tecla. Essa função, em contrapartida,  tem uma grande chance de causar erros no seu código. Evite usa-la.
+* A função `attach()` no R pode ser usada para tornar objetos dentro de dataframes acessíveis na área de trabalho com menos pressionamentos de tecla. Essa função, em contrapartida, tem uma grande chance de causar erros no seu código. Evite usá-la.
 
-* O R possui uma função que irá formatar seu código com algumas boas práticas, como espaçamento, pontuação, quebra de linhas e etc. Basta selecionar a parte do código desejada e utilizar `ctl + shift + a`.
+* O editor do RStudio possui uma função que irá formatar seu código com algumas boas práticas, como espaçamento, pontuação, quebra de linhas e etc. Basta selecionar a parte do código desejada e utilizar `ctl + shift + a`.
 
 * Não coloque `;` no final de uma linha e não use `;` para colocar vários comandos em uma linha. O `;` serve para que você quebre a linha do seu código sem precisar dar enter.
 
 # Finalização
 
-Vale lembrar que essas foram apenas algumas das ínumeras dicas de boas praticas existentes, mas praticando essas você irá construir um código muito bem estruturado e de fácil entendimento. No futuro iremos postar uma playlist com vídeos curtos no nosso canal no youtube a respeito dessas boas práticas.  
+Vale lembrar que essas foram apenas algumas das inúmeras dicas de boas práticas existentes, mas praticando essas você já irá construir um código muito bem estruturado e de fácil entendimento. No futuro iremos postar uma playlist com vídeos curtos no nosso canal no youtube a respeito dessas boas práticas.  
 
 Basta cliclar [AQUI](https://www.youtube.com/channel/UCEt4wnd1SUqp7EJLe3vbISA) para ter acesso direto ao canal.
-
-
 
 # **Referências**
 
